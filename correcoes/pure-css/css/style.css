@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto');
+
+body {
+    margin: 0px;
+    font-family: 'roboto', sans-serif ;
+}
+
+body * {
+    box-sizing: border-box;
+}
+
+.main {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Apenas aplicado para desktop: telas acima de 992 */
+@media screen and (min-width: 992px) {
+  .main {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80vw;
+  }
+}
+
+.main .left {
+    height: 100vh;
+    width: 50vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.left h1 {
+    font-family: 'roboto';
+    font-size: 3vw;
+    color: #EB5819;
+    font-style: normal;
+    font-weight: 800;
+    text-align: center;
+}
+.main .card {
+  padding: 10px;
+  /* Usar display grid permite que eu faça com que os elementos filhos
+   ajustem automaticamente a largura para a largura do pai */
+  display: grid;
+  gap: 1%;
+  width: 100%;
+}
+
+.main input {
+    display: block;
+    height: 48px;
+    margin-bottom: 25px;
+    border: 1px solid #595959;
+    border-radius: 8px;
+    padding-left: 15px;
+    font-size: 12pt;
+    font-family: 'roboto';
+    box-sizing: border-box;
+}
+.main input::placeholder{
+    font-family: 'roboto';
+}
+
+button {
+    background-color: #EB5819;
+    border-radius: 8px;
+    color: #fff;
+    font-family: 'roboto';
+    font-size: 12pt;
+    font-weight: 500;
+    width: 100%;
+    height: 49px;
+    cursor: pointer;
+    border: none;
+}
+
+button:hover{
+    background-color: #f77c48;
+    color: #fff;
+}
+
+.main .right {
+    height: 100vh;
+    width: 50vw; 
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+}
+.main .right img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ===== Response area ===== */
+
+/* Abaixo de 991px é Tablet ou smartphone */
+
+@media screen and (max-width: 991px) {
+  .main {
+    flex-direction: column;
+  }
+  .order1 {
+    order: 2;
+  }
+  .order2 {
+    order: 1;
+  }
+  
+  .main .left {
+    width: 30vw;
+  }
+
+  .main .right {
+    /* O width right vai determinar o tamanho da imagem pois a imagem esta com width: 100% e height: auto */
+    /* Em outras palavras, ela pega o width do elemento pai */
+    width: 20vw;
+    height: 40vh;
+  }
+
+  .left h1 {
+    font-size: 3vw;
+  }
+  .left h1 br {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .main .left {
+    width: 60vw;
+  }
+
+  .main .right {
+    width: 40vw;
+  }
+  .left h1 {
+    font-size: 4vw;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .main .left {
+    width: 80vw;
+  }
+
+  .main .right {
+    width: 60vw;
+  }
+
+  .left h1 {
+    font-size: 5vw;
+  }
+}
